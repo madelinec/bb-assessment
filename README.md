@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, make sure the provided .env file is at the route of the directory
+First, make sure the provided .env file is at the root of the directory
 
 run the dependency install:
 
