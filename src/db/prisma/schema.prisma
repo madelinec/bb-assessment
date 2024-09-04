@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id            Int            @id @default(autoincrement())
+  name          String
+  email         String         @unique
+  subscriptions Subscription[] // One-to-many relationship with Subscription
+}
+
+model Subscription {
+  userId       Int         @map("user_id")
+  newsletterId Int         @map("newsletter_id")
+  user         User        @relation(fields: [userId], references: [id])
+  newsletter   Newsletter  @relation(fields: [newsletterId], references: [id])
+  subscribed   Boolean
+
+  @@unique([userId, newsletterId]) // Ensure a user cannot subscribe to the same newsletter multiple times
+}
+
+model Newsletter {
+  id           Int            @id @default(autoincrement())
+  name         String
+  description  String?
+  subscriptions Subscription[] // One-to-many relationship with Subscription
+}
