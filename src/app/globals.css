@@ -9,21 +9,49 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'BannerFontBold';
+  src: url('/fonts/GT-America-Extended-Black.woff2') format('woff2');
+  font-weight: bold;
+  font-style: bold;
+}
+
 body {
   font-family: 'BannerFont', sans-serif;
 }
 
-.card {
-  width: 300px;
+.bold-text {
+  font-family: 'BannerFontBold', sans-serif
+}
+
+.tile {
+  width: 250px;
+  height: 250px;
   border: 2px solid black;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
+.header {
+  height: 75px;
+}
+
+.tile-body {
+  height: 175px;
+}
+
+.description {
+  font-size: 10px;
+}
+
+.button {
+  padding: 5px 20px;
+}
+
 /* NOTE: loading all newsletter data from db,
-   maybe store attributes in db too */
+   maybe store these attributes in db too */
 .color3000 {
-  background-color: green;
+  background-color: rgb(49, 201, 49);
 }
 .color4000 {
-  background-color: yellow
+  background-color: gold
 }

@@ -1,4 +1,4 @@
-import NewsCard from "./_lib/NewsCard";
+import NewsTile from "./_lib/NewsTile"
 
 export default async function Home() {
   type Subscription = {
@@ -21,15 +21,15 @@ export default async function Home() {
   return (
     <main className="flex flex-col p-10">
     <div className="flex flex-row justify-between">
-      <div className="flex flex-col pt-5">
-        <h1 className="text-3xl font-bold">Email Newsletters</h1>
+      <div className="flex flex-col">
+        <h1 className="bold-text">Email Newsletters</h1>
       </div>
     </div>
         <div className="flex pt-10">
           <ul className="flex flex-wrap gap-4">
             {data.map((subscription: Subscription) => (
               <li key={subscription.newsletter.id}>
-                <NewsCard
+                <NewsTile
                   id={subscription.newsletter.id}
                   name={subscription.newsletter.name}
                   description={subscription.newsletter.description}
