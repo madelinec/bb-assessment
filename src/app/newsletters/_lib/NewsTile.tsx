@@ -59,7 +59,8 @@ return (
           <div className='w-2/3 description'>{description}</div>
         </div>
         { loading ? 
-             (<div> <PiSpinner /> Loading.. </div>) : (<div className='pb-2'> {renderButton()} </div>)
+            (<div className='flex items-center justify-between pb-2'> <PiSpinner /> Loading.. </div>) :
+            (<div className='pb-2'> {renderButton()} </div>)
         }
       </div>
     </div>
