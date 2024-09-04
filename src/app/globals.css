@@ -2,32 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+  font-family: 'BannerFont';
+  src: url('/fonts/GT-America-Standard-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'BannerFont', sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.card {
+  width: 300px;
+  border: 2px solid black;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* NOTE: loading all newsletter data from db,
+   maybe store attributes in db too */
+.color3000 {
+  background-color: green;
+}
+.color4000 {
+  background-color: yellow
 }

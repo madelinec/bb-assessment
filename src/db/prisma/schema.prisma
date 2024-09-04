@@ -28,6 +28,7 @@ model Subscription {
   newsletter   Newsletter  @relation(fields: [newsletterId], references: [id])
   subscribed   Boolean
 
+  @@id([userId, newsletterId])
   @@unique([userId, newsletterId]) // Ensure a user cannot subscribe to the same newsletter multiple times
 }
 
