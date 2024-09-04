@@ -27,3 +27,5 @@ The newsletter data is dynamically loaded from the db, so it's possible that ord
 The current user is hard coded in the queries - this is something that should be determined with a login/auth flow. (queries inside src/app/api)
 
 Page and tile component in src/app/newsletters/page.tsx and src/app/newsletters/_lib/NewsTiles.tsx
+
+Can search directory for "NOTE:" for additional inline notes
