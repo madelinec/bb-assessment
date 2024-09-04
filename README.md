@@ -21,6 +21,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Notes + Additional Considerations:
 The database is deployed on Supabase, but the schema can be found inside src/db/prisma/schema.prisma
+
 The newsletter data is dynamically loaded from the db, so it's possible that order is not consistent with design.
+
 The current user is hard coded in the queries - this is something that should be determined with a login/auth flow. (queries inside src/app/api)
+
 Page and tile component in src/app/newsletters/page.tsx and src/app/newsletters/_lib/NewsTiles.tsx
